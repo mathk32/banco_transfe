@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -49,7 +50,7 @@ public class UsuarioServiceImpl implements UsuarioService {
     }
 
     @Override
-    public List<UsuarioDTO> obter_usuarios() throws Exception {
+    public List<UsuarioDTO> obter_usuarios(){
         List<Usuario> usuario_encontrado = usuario_repository.findAll();
         if(!usuario_encontrado.isEmpty()){
             return usuario_encontrado.stream().map(usuario -> UsuarioDTO.builder().
@@ -59,7 +60,7 @@ public class UsuarioServiceImpl implements UsuarioService {
                     .build()).collect(Collectors.toList());
 
         }else{
-            throw new Exception("Usuarios nao encontrados");
+            return new ArrayList<>();
         }
     }
 

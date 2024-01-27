@@ -10,5 +10,5 @@ public interface UsuarioService {
     void validacao_transferencia(Usuario devedor, BigDecimal valor) throws Exception;
     Integer criar_usuario (Usuario usuario);
     UsuarioDTO obter_usuario_id(Integer id) throws Exception;
-    List<UsuarioDTO> obter_usuarios() throws Exception;
+    List<UsuarioDTO> obter_usuarios();
 }
