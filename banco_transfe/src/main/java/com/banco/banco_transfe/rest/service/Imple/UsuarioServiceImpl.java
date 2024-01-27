@@ -34,6 +34,7 @@ public class UsuarioServiceImpl implements UsuarioService {
     public Integer criar_usuario(Usuario usuario){
         usuario_repository.save(usuario);
         return usuario.getId();
+
     }
 
     public UsuarioDTO obter_usuario_id(Integer id) throws Exception {
